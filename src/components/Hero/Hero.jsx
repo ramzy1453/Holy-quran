@@ -20,7 +20,7 @@ export default function Hero() {
   } else {
     return (
       <div className="hero">
-        <img src={quran} alt="icon" width={320} height={320} />
+        <img src={quran} alt="quran" width={320} height={320} />
         <input type="search" placeholder="What do you want read ?" />
 
         <div className="surah-container">
