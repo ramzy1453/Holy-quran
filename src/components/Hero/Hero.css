@@ -1,0 +1,63 @@
+.hero {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: rgb(24, 81, 73);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 81, 73, 1) 0%,
+    rgba(48, 221, 155, 1) 49%,
+    rgba(149, 255, 213, 1) 100%
+  );
+  padding: 18px;
+}
+input {
+  width: 70%;
+  height: 42px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #1e6e63;
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+input::placeholder {
+  color: rgb(189, 185, 185);
+}
+.surah-container {
+  margin: 24px 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(38, auto);
+}
+.surah {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  padding: 4px 32px;
+  border-radius: 6px;
+  justify-content: space-between;
+}
+.surah .left {
+  display: flex;
+  margin-right: 120px;
+  justify-content: center;
+  align-items: center;
+}
+.number-of-surah > h1 {
+  position: absolute;
+  color: white;
+  font-size: 16px;
+}
+.number-of-surah > img {
+  position: relative;
+  margin-left: -24px;
+  margin-top: -10px;
+}
+.right {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

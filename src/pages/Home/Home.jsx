@@ -1,6 +1,12 @@
 import React from "react";
-import "./Home.css";
 import Navbar from "../../components/Navbar/Navbar";
+import Hero from "../../components/Hero/Hero";
+import "./Home.css";
 export default function Home() {
-  return <Navbar />;
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+    </div>
+  );
 }
