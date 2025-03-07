@@ -1,11 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import "./Hero.css";
 import quran from "./quran.png";
 import icon from "./icon.png";
 export default function Hero() {
   const [surah, setsurah] = useState([]);
   const [loading, setloading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://api.alquran.cloud/v1/surah")
@@ -25,7 +27,12 @@ export default function Hero() {
 
         <div className="surah-container">
           {surah.map((surates) => (
-            <div className="surah">
+            <div
+              className="surah"
+              onClick={() => {
+                navigate(`/Sourate/${surates.number}`);
+              }}
+            >
               <div className="left">
                 <div className="number-of-surah">
                   <h1>{surates.number}</h1>

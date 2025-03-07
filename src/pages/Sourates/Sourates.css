@@ -1,0 +1,35 @@
+body {
+  background: rgb(24, 81, 73);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 81, 73, 1) 0%,
+    rgba(48, 221, 155, 1) 49%,
+    rgba(149, 255, 213, 1) 100%
+  );
+}
+.sourate > h1 {
+  font-size: 52px;
+}
+.sourate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ayat-container {
+  display: grid;
+
+  grid-template-rows: repeat(5, auto);
+  justify-content: end;
+  align-items: center;
+  height: 100vh;
+}
+.ayat-container .aya {
+  background-color: rgba(5, 169, 93, 0.856);
+  color: white;
+  margin: 0 18px;
+  padding: 0px 32px;
+  justify-content: end;
+  border: 1px solid black;
+  border-radius: 4px;
+}
