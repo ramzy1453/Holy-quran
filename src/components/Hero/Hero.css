@@ -36,7 +36,7 @@ input::placeholder {
   border: 1px solid black;
   display: flex;
   flex-direction: row;
-  padding: 4px 32px;
+  padding: 4px 0px;
   border-radius: 6px;
   justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -47,7 +47,7 @@ input::placeholder {
 }
 .surah .left {
   display: flex;
-  margin-right: 120px;
+  margin-right: 110px;
   justify-content: center;
   align-items: center;
 }
@@ -63,10 +63,10 @@ input::placeholder {
   font-size: 16px;
   margin: 0;
 }
-.number-of-surah > img {
-}
+
 .right {
   justify-content: center;
   align-items: center;
   display: flex;
+  padding-right: 22px;
 }

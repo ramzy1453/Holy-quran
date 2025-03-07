@@ -31,7 +31,7 @@ export default function Hero() {
                   <h1>{surates.number}</h1>
                   <img src={icon} width={62} height={62} />
                 </div>
-                <h2>{surates.name}</h2>
+                <h2>{surates.englishName}</h2>
               </div>
               <div className="right">
                 <p>{surates.numberOfAyahs}</p>
