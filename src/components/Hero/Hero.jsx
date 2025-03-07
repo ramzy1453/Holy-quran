@@ -8,7 +8,6 @@ export default function Hero() {
   const [surah, setsurah] = useState([]);
   const [loading, setloading] = useState(true);
   const navigate = useNavigate();
-
   useEffect(() => {
     fetch("http://api.alquran.cloud/v1/surah")
       .then((response) => response.json())

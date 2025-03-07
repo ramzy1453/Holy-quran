@@ -15,21 +15,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 16px;
 }
 .ayat-container {
   display: grid;
-
   grid-template-rows: repeat(5, auto);
+  gap: 12px;
   justify-content: end;
   align-items: center;
-  height: 100vh;
+  max-width: 700px;
+  padding: 0 32px;
 }
 .ayat-container .aya {
   background-color: rgba(5, 169, 93, 0.856);
   color: white;
-  margin: 0 18px;
+  border: 1px black solid;
   padding: 0px 32px;
   justify-content: end;
   border: 1px solid black;
   border-radius: 4px;
+}
+img {
+  filter: invert(0.3);
 }

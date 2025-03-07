@@ -1,16 +1,34 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Sourates.css";
 export default function Sourates() {
+  const [surah, setsurah] = useState([]);
+  const [loading, setloading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://api.alquran.cloud/v1/surah/5/ar.alafasy")
+      .then((response) => response.json())
+      .then((data) => {
+        setsurah(data.data);
+        setloading(false);
+      });
+  }, []);
+
+  console.log(surah);
+  if (loading) return <div>loading...</div>;
+
   return (
-    <div className="sourate">
-      <h1>- سورة بالفاتحة - </h1>
+    <div className="sourate" dir="rtl">
+      <h1>- {surah.name} - </h1>
       <div className="ayat-container">
-        <div className="aya">
-          <p>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ </p>
-        </div>
-        <div className="aya">
-          <p> ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَـٰلَمِینَ</p>
-        </div>
+        {surah.ayahs.map((aya) => (
+          <div className="aya">
+            <img
+              className="ayat-png"
+              src={`https://cdn.islamic.network/quran/images/${surah.number}_${aya.numberInSurah}.png`}
+              alt="ayat"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
