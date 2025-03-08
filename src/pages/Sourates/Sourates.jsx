@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./Sourates.css";
 import { useParams } from "react-router";
 import star from "./islam-star.png";
+import loader from "./loader.gif";
 export default function Sourates() {
   const [surah, setsurah] = useState([]);
   const [Edition, setEdition] = useState([]);
@@ -26,8 +27,12 @@ export default function Sourates() {
       });
   }, [CurrentEdition]);
 
-  if (LoadingSurah || LoadingEdition) return <div>loading...</div>;
-
+  if (LoadingSurah || LoadingEdition)
+    return (
+      <div className="loader">
+        <img src={loader} alt="loader" width={186} height={186} />
+      </div>
+    );
   return (
     <div className="sourate">
       <div className="star-text-container">
@@ -38,18 +43,26 @@ export default function Sourates() {
       <div className="select-ayat-container">
         <div className="select-container">
           <p>Choose Edition</p>
-          <select
-            dir="ltr"
-            onChange={(event) => {
-              setCurrentEdition(event.target.value);
-            }}
-          >
-            {Edition.map((edition) => (
-              <option value={edition.identifier}>
-                {edition.name} - {edition.language.toUpperCase()}
-              </option>
-            ))}
-          </select>
+          <div className="audio-select-container">
+            <select
+              dir="ltr"
+              onChange={(event) => {
+                setCurrentEdition(event.target.value);
+              }}
+            >
+              {Edition.map((edition) => (
+                <option value={edition.identifier}>
+                  {edition.name} - {edition.language.toUpperCase()}
+                </option>
+              ))}
+            </select>
+            <audio controls>
+              <source
+                src={`https://cdn.islamic.network/quran/audio/128/ar.alafasy/.mp3`}
+                type="audio/mpeg"
+              />
+            </audio>{" "}
+          </div>{" "}
         </div>
         <section id="container-of-ayats">
           <div className="ayat-box-container">

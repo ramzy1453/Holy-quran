@@ -54,8 +54,6 @@ body {
 .select-container {
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  margin-bottom: 36px;
 }
 .select-container p {
   color: rgb(237, 227, 227);
@@ -66,7 +64,7 @@ body {
   background: rgb(28, 110, 99);
   color: white;
   padding: 12px;
-  width: 26%;
+  width: 28%;
   border: none;
   border-radius: 6px;
   font-family: "Reem Kufi", sans-serif;
@@ -76,9 +74,26 @@ body {
   background-color: #2dcc91;
 }
 .select-ayat-container {
-  padding: 0 36px;
+  padding: 0 23px;
 }
-audio {
+#container-of-ayats audio {
   height: 30px;
   padding: 18px;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.audio-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+.audio-select-container audio {
+  background-color: rgb(241, 243, 244);
+  border: 1px solid #1c6e63;
+  border-radius: 4px;
 }
