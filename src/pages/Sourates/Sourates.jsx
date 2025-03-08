@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Sourates.css";
 import { useParams } from "react-router";
+import star from "./islam-star.png";
 export default function Sourates() {
   const [surah, setsurah] = useState([]);
   const [Edition, setEdition] = useState([]);
@@ -28,37 +29,49 @@ export default function Sourates() {
   if (LoadingSurah || LoadingEdition) return <div>loading...</div>;
 
   return (
-    <div className="sourate" dir="rtl">
-      <h1>- {surah.name} - </h1>
-      <div className="select-container">
-        <select
-          dir="ltr"
-          onChange={(event) => {
-            setCurrentEdition(event.target.value);
-          }}
-        >
-          {Edition.map((edition) => (
-            <option value={edition.identifier}>
-              {edition.name} - {edition.language.toUpperCase()}
-            </option>
-          ))}
-        </select>
+    <div className="sourate">
+      <div className="star-text-container">
+        <img src={star} width={52} height={52} />
+        <h1> {surah.name} </h1>
+        <img src={star} width={52} height={52} />
       </div>
-
-      <section id="container-of-ayats">
-        <div className="ayat-box-container">
-          {surah.ayahs.map((aya) => (
-            <div className="aya">
-              <img
-                className="ayat-png"
-                src={`https://cdn.islamic.network/quran/images/${surah.number}_${aya.numberInSurah}.png`}
-                alt="ayat"
-              />
-              <p>{aya.text}</p>
-            </div>
-          ))}
+      <div className="select-ayat-container">
+        <div className="select-container">
+          <p>Choose Edition</p>
+          <select
+            dir="ltr"
+            onChange={(event) => {
+              setCurrentEdition(event.target.value);
+            }}
+          >
+            {Edition.map((edition) => (
+              <option value={edition.identifier}>
+                {edition.name} - {edition.language.toUpperCase()}
+              </option>
+            ))}
+          </select>
         </div>
-      </section>
+        <section id="container-of-ayats">
+          <div className="ayat-box-container">
+            {surah.ayahs.map((aya) => (
+              <div className="aya">
+                <img
+                  className="ayat-png"
+                  src={`https://cdn.islamic.network/quran/images/${surah.number}_${aya.numberInSurah}.png`}
+                  alt="ayat"
+                />
+                <audio controls>
+                  <source
+                    src={`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${surah.number}.mp3`}
+                    type="audio/mpeg"
+                  />
+                </audio>
+                <p>{aya.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
