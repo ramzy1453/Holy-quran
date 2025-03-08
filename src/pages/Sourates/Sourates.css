@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap");
 body {
   background: rgb(24, 81, 73);
   background: linear-gradient(
@@ -9,15 +10,18 @@ body {
 }
 .sourate > h1 {
   font-size: 52px;
+  text-align: center;
 }
 .sourate {
+  padding: 16px;
+}
+#container-of-ayats {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 16px;
 }
-.ayat-container {
+.ayat-box-container {
   display: grid;
   grid-template-rows: repeat(5, auto);
   gap: 12px;
@@ -26,7 +30,7 @@ body {
   max-width: 700px;
   padding: 0 32px;
 }
-.ayat-container .aya {
+.ayat-box-container .aya {
   background-color: rgba(5, 169, 93, 0.856);
   color: white;
   border: 1px black solid;
@@ -36,4 +40,20 @@ body {
   border-radius: 4px;
 }
 .sourate > .ayat-container > .aya > img {
+  filter: invert(0.3);
+}
+.select-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 56px;
+}
+.select-container select {
+  background: rgb(28, 110, 99);
+  color: white;
+  padding: 12px 8px;
+  width: 26%;
+  border: none;
+  border-radius: 6px;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 18px;
 }

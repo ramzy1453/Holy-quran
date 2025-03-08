@@ -30,27 +30,35 @@ export default function Sourates() {
   return (
     <div className="sourate" dir="rtl">
       <h1>- {surah.name} - </h1>
-      <select
-        onChange={(event) => {
-          setCurrentEdition(event.target.value);
-        }}
-      >
-        {Edition.map((edition) => (
-          <option value={edition.identifier}> {edition.name}</option>
-        ))}
-      </select>
-      <div className="ayat-container">
-        {surah.ayahs.map((aya) => (
-          <div className="aya">
-            <img
-              className="ayat-png"
-              src={`https://cdn.islamic.network/quran/images/${surah.number}_${aya.numberInSurah}.png`}
-              alt="ayat"
-            />
-            <p>{aya.text}</p>
-          </div>
-        ))}
+      <div className="select-container">
+        <select
+          dir="ltr"
+          onChange={(event) => {
+            setCurrentEdition(event.target.value);
+          }}
+        >
+          {Edition.map((edition) => (
+            <option value={edition.identifier}>
+              {edition.name} - {edition.language.toUpperCase()}
+            </option>
+          ))}
+        </select>
       </div>
+
+      <section id="container-of-ayats">
+        <div className="ayat-box-container">
+          {surah.ayahs.map((aya) => (
+            <div className="aya">
+              <img
+                className="ayat-png"
+                src={`https://cdn.islamic.network/quran/images/${surah.number}_${aya.numberInSurah}.png`}
+                alt="ayat"
+              />
+              <p>{aya.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
