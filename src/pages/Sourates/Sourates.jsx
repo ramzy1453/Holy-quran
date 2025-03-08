@@ -62,7 +62,7 @@ export default function Sourates() {
                 />
                 <audio controls>
                   <source
-                    src={`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${surah.number}.mp3`}
+                    src={`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${aya.number}.mp3`}
                     type="audio/mpeg"
                   />
                 </audio>
