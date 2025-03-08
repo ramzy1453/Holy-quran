@@ -35,6 +35,5 @@ body {
   border: 1px solid black;
   border-radius: 4px;
 }
-img {
-  filter: invert(0.3);
+.sourate > .ayat-container > .aya > img {
 }
