@@ -3,13 +3,15 @@ import "./Sourates.css";
 import { useParams } from "react-router";
 import star from "./islam-star.png";
 import loader from "./loader.gif";
+
 export default function Sourates() {
-  const [surah, setsurah] = useState([]);
+  const [surah, setsurah] = useState(null);
   const [Edition, setEdition] = useState([]);
   const [LoadingEdition, setLoadingEdition] = useState(true);
   const [LoadingSurah, setLoadingsurah] = useState(true);
   const [CurrentEdition, setCurrentEdition] = useState("ar.alafasy");
   const params = useParams();
+
   useEffect(() => {
     fetch(
       `https://api.alquran.cloud/v1/surah/${params.numberSourat}/${CurrentEdition}`
@@ -19,6 +21,7 @@ export default function Sourates() {
         setsurah(data.data);
         setLoadingsurah(false);
       });
+
     fetch("https://api.alquran.cloud/v1/edition")
       .then((response) => response.json())
       .then((data) => {
@@ -50,7 +53,7 @@ export default function Sourates() {
             }}
           >
             {Edition.map((edition) => (
-              <option value={edition.identifier}>
+              <option key={edition.identifier} value={edition.identifier}>
                 {edition.name} - {edition.language.toUpperCase()}
               </option>
             ))}
@@ -58,11 +61,11 @@ export default function Sourates() {
         </div>
         <section id="container-of-ayats">
           <div className="ayat-box-container">
-            {surah.ayahs.map((aya) => (
+            {surah?.ayahs?.map((aya) => (
               <div className="aya">
                 <img
                   className="ayat-png"
-                  src={`https://cdn.islamic.network/quran/images/high-resolution/${surah.number}_$git {aya.numberInSurah}.png`}
+                  src={`https://cdn.islamic.network/quran/images/high-resolution/${surah.number}_${aya.numberInSurah}.png`}
                   alt="ayat"
                 />
                 <audio controls>
