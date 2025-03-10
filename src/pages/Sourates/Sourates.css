@@ -18,6 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 26px 0;
 }
 
 .sourate {
@@ -34,7 +35,12 @@ body {
   padding: 0 0px;
 }
 .ayat-box-container .aya {
-  background-color: rgba(5, 169, 93, 0.856);
+  background: rgb(58, 187, 113);
+  background: radial-gradient(
+    circle,
+    rgba(58, 187, 113, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
   color: white;
   padding: 20px;
   border-bottom: 1px rgb(255, 255, 255) solid;
@@ -49,7 +55,6 @@ body {
 }
 #container-of-ayats > .ayat-box-container > .aya > img {
   min-width: 100%;
-  filter: invert(0.3);
 }
 @media screen and (max-width: 700px) {
   #container-of-ayats > .ayat-box-container > .aya > img {
@@ -93,4 +98,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.aya p {
+  color: black;
 }

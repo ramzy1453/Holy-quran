@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Home from "./pages/Home/Home";
 import Sourates from "./pages/Sourates/Sourates";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Navbar from "./components/Navbar/Navbar";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,7 +11,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/Sourate/:numberSourat",
-    element: <Sourates />,
+    element: (
+      <>
+        <Navbar />
+        <Sourates />
+      </>
+    ),
   },
 ]);
 
