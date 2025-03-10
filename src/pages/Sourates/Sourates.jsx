@@ -62,7 +62,7 @@ export default function Sourates() {
               <div className="aya">
                 <img
                   className="ayat-png"
-                  src={`https://cdn.islamic.network/quran/images/${surah.number}_${aya.numberInSurah}.png`}
+                  src={`https://cdn.islamic.network/quran/images/high-resolution/${surah.number}_$git {aya.numberInSurah}.png`}
                   alt="ayat"
                 />
                 <audio controls>

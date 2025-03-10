@@ -35,12 +35,6 @@ body {
   padding: 0 0px;
 }
 .ayat-box-container .aya {
-  background: rgb(58, 187, 113);
-  background: radial-gradient(
-    circle,
-    rgba(58, 187, 113, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
   color: white;
   padding: 20px;
   border-bottom: 1px rgb(255, 255, 255) solid;
