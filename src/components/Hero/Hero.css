@@ -13,7 +13,7 @@
   padding: 18px;
 }
 input {
-  width: 70%;
+  min-width: 72%;
   height: 44px;
   padding: 12px 16px;
   border: none;
@@ -28,10 +28,27 @@ input::placeholder {
 .surah-container {
   margin: 24px 0;
   display: grid;
+  padding: 0 16px;
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(38, auto);
 }
+@media screen and (min-width: 768px) {
+  .surah-container {
+    grid-template-columns: repeat(2, minmax(0, 100vh));
+  }
+}
+@media screen and (min-width: 1280px) {
+  .surah-container {
+    grid-template-columns: repeat(3, minmax(0, 100vh));
+  }
+}
+@media screen and (max-width: 768px) {
+  .surah-container {
+    grid-template-columns: repeat(1, minmax(0, 100vh));
+  }
+}
+
 .surah {
   border: 1px solid black;
   display: flex;
@@ -47,7 +64,6 @@ input::placeholder {
 }
 .surah .left {
   display: flex;
-  margin-right: 110px;
   justify-content: center;
   align-items: center;
 }
