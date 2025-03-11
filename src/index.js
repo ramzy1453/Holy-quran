@@ -1,4 +1,4 @@
-import React from "react";
+import React, { startTransition } from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home/Home";
 import Sourates from "./pages/Sourates/Sourates";
@@ -19,7 +19,6 @@ const router = createBrowserRouter([
     ),
   },
 ]);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

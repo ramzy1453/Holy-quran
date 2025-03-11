@@ -2,10 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import "./Hero.css";
-import quran from "./quran.png";
+import quranLight from "./quran.png";
+import quranDark from "./quranb.png";
 import icon from "./icon.png";
 import loader from "./loader.gif";
-export default function Hero() {
+export default function Hero(props) {
   const [surah, setsurah] = useState([]);
   const [loading, setloading] = useState(true);
   const navigate = useNavigate();
@@ -25,9 +26,12 @@ export default function Hero() {
     );
   return (
     <div className="hero">
-      <img src={quran} alt="quran" width={320} height={320} />
+      {props.DarkMode === false ? (
+        <img src={quranLight} alt="quran" width={320} height={320} />
+      ) : (
+        <img src={quranDark} alt="quran" width={360} height={360} />
+      )}
       <input type="search" placeholder="What do you want read ?" />
-
       <div className="surah-container">
         {surah.map((surates) => (
           <div

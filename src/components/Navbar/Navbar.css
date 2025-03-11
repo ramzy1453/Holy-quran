@@ -2,7 +2,6 @@ nav {
   padding: 0 8px;
   display: flex;
   align-items: center;
-  background-color: #20635a;
   justify-content: space-between;
 }
 nav .left {
@@ -20,4 +19,5 @@ nav .left h2 {
 }
 nav .right svg {
   margin: 0 -16px;
+  cursor: pointer;
 }
