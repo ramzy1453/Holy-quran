@@ -10,9 +10,11 @@ body {
     rgba(0, 22, 205, 1) 50%,
     rgba(144, 176, 255, 1) 100%
   );
+  transition: background 0.5s;
 }
 .dark-mode nav {
   background-color: #0d0059;
+  transition: background-color 0.5s;
 }
 .dark-mode input {
   background-color: #0d0059;

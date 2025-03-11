@@ -85,3 +85,6 @@ input::placeholder {
   align-items: center;
   height: 100vh;
 }
+.img-dark {
+  transform: scale(1.3);
+}

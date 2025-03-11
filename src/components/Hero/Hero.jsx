@@ -29,7 +29,13 @@ export default function Hero(props) {
       {props.DarkMode === false ? (
         <img src={quranLight} alt="quran" width={320} height={320} />
       ) : (
-        <img src={quranDark} alt="quran" width={360} height={360} />
+        <img
+          className="img-dark"
+          src={quranDark}
+          alt="quran"
+          width={320}
+          height={320}
+        />
       )}
       <input type="search" placeholder="What do you want read ?" />
       <div className="surah-container">
