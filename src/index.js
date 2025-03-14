@@ -1,9 +1,9 @@
-import React, { startTransition } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home/Home";
 import Sourates from "./pages/Sourates/Sourates";
+import Reciters from "./pages/Reciters/reciter";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Navbar from "./components/Navbar/Navbar";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,12 +11,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/Sourate/:numberSourat",
-    element: (
-      <>
-        <Navbar />
-        <Sourates />
-      </>
-    ),
+    element: <Sourates />,
+  },
+  {
+    path: "/reciter",
+    element: <Reciters />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

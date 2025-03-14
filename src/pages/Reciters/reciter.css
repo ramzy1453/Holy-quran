@@ -1,0 +1,17 @@
+.reciter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reciter-container .reciter-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 16px;
+}
+.reciter-container .reciter-card {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+}

@@ -6,10 +6,13 @@ import quranLight from "./quran.png";
 import quranDark from "./quranb.png";
 import icon from "./icon.png";
 import loader from "./loader.gif";
-export default function Hero(props) {
+import { useStore } from "../../lib/store";
+export default function Hero() {
   const [surah, setsurah] = useState([]);
+  const darkMode = useStore((state) => state.darkMode);
   const [loading, setloading] = useState(true);
   const navigate = useNavigate();
+
   useEffect(() => {
     fetch("http://api.alquran.cloud/v1/surah")
       .then((response) => response.json())
@@ -26,7 +29,7 @@ export default function Hero(props) {
     );
   return (
     <div className="hero">
-      {props.DarkMode === false ? (
+      {darkMode === false ? (
         <img src={quranLight} alt="quran" width={320} height={320} />
       ) : (
         <img

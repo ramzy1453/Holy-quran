@@ -76,6 +76,12 @@ body {
   font-family: "Reem Kufi", sans-serif;
   font-size: 16px;
 }
+.dark-mode .select-container select {
+  background: rgb(13, 0, 89);
+}
+.light-mode .select-container select {
+  background: rgb(28, 110, 99);
+}
 .select-container option {
   background-color: #2dcc91;
 }
@@ -94,5 +100,5 @@ body {
   height: 100vh;
 }
 .aya p {
-  color: black;
+  color: white;
 }

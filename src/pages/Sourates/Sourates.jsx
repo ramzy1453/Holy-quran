@@ -3,6 +3,8 @@ import "./Sourates.css";
 import { useParams } from "react-router";
 import star from "./islam-star.png";
 import loader from "./loader.gif";
+import { useStore } from "../../lib/store";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function Sourates() {
   const [surah, setsurah] = useState(null);
@@ -11,6 +13,7 @@ export default function Sourates() {
   const [LoadingSurah, setLoadingsurah] = useState(true);
   const [CurrentEdition, setCurrentEdition] = useState("ar.alafasy");
   const params = useParams();
+  const darkMode = useStore((state) => state.darkMode);
 
   useEffect(() => {
     fetch(
@@ -37,7 +40,8 @@ export default function Sourates() {
       </div>
     );
   return (
-    <div className="sourate">
+    <div className={`sourates ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <Navbar />
       <div className="star-text-container">
         <img src={star} width={52} height={52} />
         <h1> {surah.name} </h1>
@@ -47,6 +51,7 @@ export default function Sourates() {
         <div className="select-container">
           <p>Choose Edition</p>
           <select
+            className={`${darkMode ? "dark-mode" : "light-mode"}`}
             dir="ltr"
             onChange={(event) => {
               setCurrentEdition(event.target.value);

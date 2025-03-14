@@ -1,6 +1,9 @@
 import React from "react";
 import "./Navbar.css";
-export default function Navbar(props) {
+import { useStore } from "../../lib/store";
+export default function Navbar() {
+  const setDarkMode = useStore((state) => state.setDarkMode);
+  const darkMode = useStore((state) => state.darkMode);
   return (
     <nav>
       <div className="left">
@@ -30,15 +33,15 @@ export default function Navbar(props) {
       </div>
       <div
         onClick={() => {
-          if (props.DarkMode) {
-            props.setDarkMode(false);
+          if (darkMode) {
+            setDarkMode(false);
           } else {
-            props.setDarkMode(true);
+            setDarkMode(true);
           }
         }}
         className="right"
       >
-        {props.DarkMode === false ? (
+        {darkMode === false ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
