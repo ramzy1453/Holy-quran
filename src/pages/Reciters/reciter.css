@@ -7,6 +7,7 @@
 .reciter-container .reciter-cards-container {
   display: grid;
   grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, 1fr);
   gap: 16px;
 }
 .reciter-container .reciter-card {
@@ -14,4 +15,5 @@
   border-radius: 10px;
   padding: 16px;
   cursor: pointer;
+  max-width: 200px;
 }
