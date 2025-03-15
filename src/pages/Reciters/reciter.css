@@ -7,13 +7,15 @@
 .reciter-container .reciter-cards-container {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(1, auto);
   gap: 16px;
+  padding: 12px 22px;
 }
 .reciter-container .reciter-card {
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  padding: 16px;
+  background-color: #f1f1f14a;
+  border-radius: 6px;
+  padding: 6px;
   cursor: pointer;
-  max-width: 200px;
+  border: 1px solid rgb(0, 126, 97);
+  text-align: center;
 }
