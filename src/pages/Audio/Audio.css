@@ -1,0 +1,7 @@
+.audio-parent {
+  padding: 32px;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(48, auto);
+  grid-gap: 16px;
+  display: grid;
+}

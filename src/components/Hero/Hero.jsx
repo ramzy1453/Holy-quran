@@ -40,7 +40,7 @@ export default function Hero() {
           height={320}
         />
       )}
-      <input type="search" placeholder="What do you want read ?" />
+      <input type="search" placeholder="What do you want read ?" />{" "}
       <div className="surah-container">
         {surah.map((surates) => (
           <div
