@@ -52,7 +52,6 @@ export default function Sourates() {
           <p>Choose Edition</p>
           <select
             className={`${darkMode ? "dark-mode" : "light-mode"}`}
-            dir="ltr"
             onChange={(event) => {
               setCurrentEdition(event.target.value);
             }}

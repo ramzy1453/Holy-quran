@@ -21,3 +21,11 @@ nav .right svg {
   margin: 0 -16px;
   cursor: pointer;
 }
+.language-select {
+  margin-left: auto;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 14px;
+}
